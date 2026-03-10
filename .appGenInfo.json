@@ -1,0 +1,23 @@
+{
+  "generationParameters": {
+    "generationDate": "Sat Mar 07 2026 16:48:32 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://36f6b78ftrial-dev-cap-bookshop-srv.cfapps.us10-001.hana.ondemand.com/odata/v2/catalog-v2/",
+    "appName": "book-shop-catalog-v2",
+    "appTitle": "Book Shop Catalog",
+    "appDescription": "",
+    "appNamespace": "",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.145.0",
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.20.4",
+    "template": "Basic V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

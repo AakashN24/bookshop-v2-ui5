@@ -1,0 +1,34 @@
+<mvc:View controllerName="bookshopcatalogv2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Table id="Books" items="{ path: '/Books'}">
+            <headerToolbar>
+                <Toolbar id='toolbar'>
+                    <Title id='booksTable' text='Books'/>
+                    <ToolbarSpacer id='toolbarSpacer' />
+                    <Button id='createBtn' text='Create' press='.onCreate'/>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column id='column1'>
+                    <Text id='textcolumn1text' text='ID'/>
+                </Column>
+                <Column id='column2'>
+                    <Text id='textcolumn2text' text='Book Title'/>
+                </Column>
+                <Column id='column3'>
+                    <Text id='textcolumn3text' text='Stock' />
+                </Column>
+                <Column id="delete1"></Column>
+            </columns>
+            <ColumnListItem id="columnlistItem1">
+                <ObjectIdentifier id='ObjectIdentifier1' text="{ID}" />
+                <!-- <ObjectIdentifier id='ObjectIdentifier2' text="{title}"/> -->
+                <Text id='column2text' text="{title}" />
+                <ObjectIdentifier id='ObjectIdentifier3' text="{stock}" />
+                <Button id='delete' icon="sap-icon://delete" press="onDeletePress" ariaLabelledBy="actionButtonLabel"/>
+            </ColumnListItem>
+        </Table>
+    </Page>
+</mvc:View>
