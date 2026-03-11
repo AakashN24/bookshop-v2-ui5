@@ -1,6 +1,6 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "bookshopcatalogv2/model/models"
+    "bookshopcatalogv2/model/models",
 ], (UIComponent, models) => {
     "use strict";
 
@@ -18,6 +18,9 @@ sap.ui.define([
 
             // set the device model
             this.setModel(models.createDeviceModel(), "device");
+
+            //set the dialog input model
+            this.setModel(models.createDialogInputModel(), "dialogInput");
 
             // enable routing
             this.getRouter().initialize();

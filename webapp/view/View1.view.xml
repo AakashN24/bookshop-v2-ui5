@@ -27,7 +27,10 @@
                 <!-- <ObjectIdentifier id='ObjectIdentifier2' text="{title}"/> -->
                 <Text id='column2text' text="{title}" />
                 <ObjectIdentifier id='ObjectIdentifier3' text="{stock}" />
-                <Button id='delete' icon="sap-icon://delete" press="onDeletePress" ariaLabelledBy="actionButtonLabel"/>
+                <FlexBox id='Hbox'>
+                    <Button id='delete' icon="sap-icon://delete" press="onDeletePress"/>
+                    <Button id='edit' icon="sap-icon://edit" press="onEditPress"/>
+                </FlexBox>
             </ColumnListItem>
         </Table>
     </Page>

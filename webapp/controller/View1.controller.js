@@ -1,6 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], (Controller) => {
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast",
+    "bookshopcatalogv2/model/models"
+], (Controller, MessageToast, models) => {
     "use strict";
 
     return Controller.extend("bookshopcatalogv2.controller.View1", {
@@ -17,28 +19,27 @@ sap.ui.define([
             this.oCreateDialog?.close();
         },
         onDialogCreate() {
-            let vTitle = this.byId("input1").getValue();
-            let vStock = this.byId("stockInput").getValue();
-            let vID = this.byId("idInput").getValue();
+            let oPayload = this.getView().getModel("dialogInput").getData();
 
             const oTableBinding = this.byId("Books").getBinding("items");
             console.log('oTableBinding---', oTableBinding)
+            const sPath = oTableBinding?.getPath();
 
-            this.getView().getModel().create("/Books", {
-                ID: vID,
-                title: vTitle,
-                stock: vStock
-            },
+            this.getView().getModel().create(sPath, oPayload,
                 {
                     success: (oData, oResponse) => {
                         console.log(oData, oResponse)
                         this.oCreateDialog?.close();
+                        MessageToast.show("Book Added")
                     },
                     error: (oError) => {
                         console.log(oError);
                         this.oCreateDialog?.close();
                     }
                 })
+        },
+        onAfterCloseDialog() {
+            this.getOwnerComponent().setModel(models.createDialogInputModel(), "dialogInput");
         },
         onDeletePress(oEvent) {
             let oContext = oEvent.getSource().getBindingContext();
@@ -47,6 +48,7 @@ sap.ui.define([
 
             this.getView().getModel().remove(sPath, {
                 success: (oData, oResponse) => {
+                    MessageToast.show("Book Deleted")
                     console.log(oData, oResponse);
                 },
                 error: (oError) => {
