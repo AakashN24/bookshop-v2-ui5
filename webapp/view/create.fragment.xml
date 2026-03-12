@@ -16,7 +16,7 @@
             <Button id="create" press="onDialogCreate" text='{i18n>updateBtn1TextCreateFragment}'/>
         </beginButton>
         <endButton>
-            <Button id='cancel' press='onDialogCancel' text='{18n>updateBtn2TextCreateFragment}'/>
+            <Button id='cancel' press='onDialogCancel' text='{i18n>updateBtn2TextCreateFragment}'/>
         </endButton>
         <!-- </VBox> -->
     </Dialog>
