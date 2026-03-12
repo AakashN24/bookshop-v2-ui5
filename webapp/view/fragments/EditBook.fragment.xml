@@ -1,0 +1,23 @@
+<core:FragmentDefinition id="editFragment"
+    xmlns= "sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="editDialog" title="New Book" afterClose="onAfterCloseDialog">
+        <!-- <VBox id='vBox1'> -->
+        <f:SimpleForm id="edit_form">
+            <Label id="edit_idText" text='ID' labelFor="idInput"/>
+            <Input id='edit_idInput' enabled="false" width="100%" required="true" type="Number" value="{ID}" />
+            <Label id='edit_text1' text='Book Name' labelFor="input1" />
+            <Input id='edit_input1' width="100%" required="true" value="{title}"/>
+            <Label id='edit_StockLabel' text='Stock' labelFor="stockInput" />
+            <Input id='edit_stockInput' required="true" type="Number" value="{stock}"/>
+        </f:SimpleForm>
+        <beginButton>
+            <Button id="edit_save" press="onPressUpdateBookDialog" text='Update'/>
+        </beginButton>
+        <endButton>
+            <Button id='edit_cancel' press='onPressCancelBookDialog' text='Cancel'/>
+        </endButton>
+        <!-- </VBox> -->
+    </Dialog>
+</core:FragmentDefinition>
