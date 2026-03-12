@@ -5,22 +5,22 @@
         <Table id="Books" items="{ path: '/Books'}">
             <headerToolbar>
                 <Toolbar id='toolbar'>
-                    <Title id='booksTable' text='Books'/>
+                    <Title id='booksTable' text='{i18n>bookTableTitle}'/>
                     <ToolbarSpacer id='toolbarSpacer' />
-                    <Button id='createBtn' text='Create' press='.onCreate'/>
+                    <Button id='createBtn' text='{i18n>createBtnTitle}' press='.onCreate'/>
                 </Toolbar>
             </headerToolbar>
             <columns>
                 <Column id='column1'>
-                    <Text id='textcolumn1text' text='ID'/>
+                    <Text id='textcolumn1text' text='{i18n>columnText1}'/>
                 </Column>
                 <Column id='column2'>
-                    <Text id='textcolumn2text' text='Book Title'/>
+                    <Text id='textcolumn2text' text='{i18n>columnText2}'/>
                 </Column>
                 <Column id='column3'>
-                    <Text id='textcolumn3text' text='Stock' />
+                    <Text id='textcolumn3text' text='{i18n>columnText3}' />
                 </Column>
-                <Column id="delete1"></Column>
+                <Column id="actionColumn"></Column>
             </columns>
             <ColumnListItem id="columnlistItem1">
                 <ObjectIdentifier id='ObjectIdentifier1' text="{ID}" />

@@ -2,21 +2,21 @@
     xmlns= "sap.m"
     xmlns:core="sap.ui.core"
     xmlns:f="sap.ui.layout.form">
-    <Dialog id="editDialog" title="New Book" afterClose="onAfterCloseDialog">
+    <Dialog id="editDialog" title="{i18n>dialogTitleEditFragment}" afterClose="onAfterCloseDialog">
         <!-- <VBox id='vBox1'> -->
         <f:SimpleForm id="edit_form">
-            <Label id="edit_idText" text='ID' labelFor="idInput"/>
+            <Label id="edit_idText" text='{i18n>label1EditFragment}' labelFor="idInput"/>
             <Input id='edit_idInput' enabled="false" width="100%" required="true" type="Number" value="{ID}" />
-            <Label id='edit_text1' text='Book Name' labelFor="input1" />
+            <Label id='edit_text1' text='{i18n>label2EditFragment}' labelFor="input1" />
             <Input id='edit_input1' width="100%" required="true" value="{title}"/>
-            <Label id='edit_StockLabel' text='Stock' labelFor="stockInput" />
+            <Label id='edit_StockLabel' text='{i18n>label3EditFragment}' labelFor="stockInput" />
             <Input id='edit_stockInput' required="true" type="Number" value="{stock}"/>
         </f:SimpleForm>
         <beginButton>
-            <Button id="edit_save" press="onPressUpdateBookDialog" text='Update'/>
+            <Button id="edit_save" press="onPressUpdateBookDialog" text='{i18n>updateBtn1TextEditFragment}'/>
         </beginButton>
         <endButton>
-            <Button id='edit_cancel' press='onPressCancelBookDialog' text='Cancel'/>
+            <Button id='edit_cancel' press='onPressCancelBookDialog' text='{i18n>updateBtn2TextEditFragment}'/>
         </endButton>
         <!-- </VBox> -->
     </Dialog>

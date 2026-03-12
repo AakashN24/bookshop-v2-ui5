@@ -2,21 +2,21 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
     xmlns:f="sap.ui.layout.form">
-    <Dialog id="dialog1" title="New Book" afterClose="onAfterCloseDialog">
+    <Dialog id="dialog1" title="{i18n>dialogTitleCreateFragment}" afterClose="onAfterCloseDialog">
         <!-- <VBox id='vBox1'> -->
         <f:SimpleForm id="form">
-            <Label id="idText" text='ID' labelFor="idInput"/>
+            <Label id="idText" text='{i18n>label1CreateFragment}' labelFor="idInput"/>
             <Input id='idInput' width="100%" required="true" type="Number" value="{dialogInput>/ID}" />
-            <Label id='text1' text='Book Name' labelFor="input1" />
+            <Label id='text1' text='{i18n>label2CreateFragment}' labelFor="input1" />
             <Input id='input1' width="100%" required="true" value="{dialogInput>/title}"/>
-            <Label id='StockLabel' text='Stock' labelFor="stockInput" />
+            <Label id='StockLabel' text='{i18n>label3CreateFragment}' labelFor="stockInput" />
             <Input id='stockInput' required="true" type="Number" value="{dialogInput>/stock}"/>
         </f:SimpleForm>
         <beginButton>
-            <Button id="create" press="onDialogCreate" text='Add'/>
+            <Button id="create" press="onDialogCreate" text='{i18n>updateBtn1TextCreateFragment}'/>
         </beginButton>
         <endButton>
-            <Button id='cancel' press='onDialogCancel' text='Cancel'/>
+            <Button id='cancel' press='onDialogCancel' text='{18n>updateBtn2TextCreateFragment}'/>
         </endButton>
         <!-- </VBox> -->
     </Dialog>

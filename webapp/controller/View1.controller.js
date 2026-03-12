@@ -4,18 +4,18 @@ sap.ui.define([
     "bookshopcatalogv2/model/models",
     "sap/ui/model/Context",
     "sap/m/MessageBox"
-], (Controller, MessageToast, models, Context) => {
+], (Controller, MessageToast, models, Context, MessageBox) => {
     "use strict";
 
     return Controller.extend("bookshopcatalogv2.controller.View1", {
         onInit() {
+            this.oResourceModel = this.getOwnerComponent().getModel("i18n").getResourceBundle();
         },
         async onCreate() {
             this.oCreateDialog ??= await this.loadFragment({
                 name: "bookshopcatalogv2.view.create"
             })
             this.oCreateDialog.open();
-            MessageToast.show('Create Clicked');
         },
         async onEditPress(oEvent) {
             const oModel = this.getView().getModel();
@@ -43,7 +43,7 @@ sap.ui.define([
                     success: (oData, oResponse) => {
                         console.log(oData, oResponse)
                         this.oCreateDialog?.close();
-                        MessageToast.show("Book Added")
+                        MessageToast.show(this.oResourceModel.getText("bookCreatedMsg"))
                     },
                     error: (oError) => {
                         console.log(oError);
@@ -63,7 +63,7 @@ sap.ui.define([
 
             this.getView().getModel().remove(sPath, {
                 success: (oData, oResponse) => {
-                    MessageToast.show("Book Deleted")
+                    MessageBox.show(this.oResourceModel.getText("bookDeletedMsg"))
                     console.log(oData, oResponse);
                 },
                 error: (oError) => {
@@ -84,12 +84,11 @@ sap.ui.define([
             }
             oModel.update(sPath, oPayload, {
                 success: (oData, oResponse) => {
-                    MessageToast.show("Successfully Updated")
+                    MessageBox.show(this.oResourceModel.getText("bookUpdatedMsg"));
                     this.oEditDialog.close();
                 },
                 error: (oError) => {
                     console.log('error---', oError)
-                    // MessageToast.show()
                 }
             }).bind(this);
         }
