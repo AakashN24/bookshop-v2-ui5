@@ -1,0 +1,35 @@
+<mvc:View controllerName="bookshopcatalogv2.controller.BookDetailEdit"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form">
+    <Page id='bookDetailEditPage' showNavButton="true" navButtonPress="onNavBack" title="Book Detail Page">
+        <ObjectHeader id='ObjectHeaderBookDetailEditPage' title='Hello'></ObjectHeader>
+        <IconTabBar id='IconTabBarBookDetailEditPage' class='sapUiResponsiveContentPadding'>
+            <items>
+                <IconTabFilter id='IconTabFilter1-BookDetailEditPage' text="{i18n>details}" key="Details">
+                    <form:SimpleForm id='detailSimpleFormEditPage' editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+                        <form:content>
+                            <Label id="_IDGenLabel1EditPage" text="{i18n>ID}" labelFor="InputLabel1EditPage"/>
+                            <Text id="Text1EditPage" text="{ID}" />
+                            <!-- <Input id="InputLabel1EditPage" type='Number'/> -->
+                            <Label id="_IDGenLabel2EditPage" text="{i18n>title}" labelFor="InputLabel2EditPage"/>
+                            <!-- <Text id="_IDGenText1" text="{title}"/> -->
+                            <Input id="InputLabel2EditPage" type='Text' valueLiveUpdate="true"/>
+                            <Label id="_IDGenLabel3EditPage" text="{i18n>stock}" labelFor="InputLabel3EditPage"/>
+                            <!-- <Text id="_IDGenText2" text="{stock}" /> -->
+                            <Input id="InputLabel3EditPage" type='Number' valueLiveUpdate="true"/>
+                        </form:content>
+                    </form:SimpleForm>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+        <footer>
+            <Toolbar id='ToolbarFooterEditPage' >
+                <ToolbarSpacer id='ToolbarSpacer1'/>
+                <Button type='Emphasized' id='saveBtnFooterEditPage' text='{i18n>saveBtnFooterEditPage}' press="onPressSaveBtnFooterEditPage"/>
+                <Button id='cancelBtnFooterEditPage' text='{i18n>cancelBtnFooterEditPage}' press="onPressCancelBtnFooterEditPage"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

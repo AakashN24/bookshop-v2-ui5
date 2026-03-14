@@ -22,7 +22,7 @@
                 </Column>
                 <Column id="actionColumn"></Column>
             </columns>
-            <ColumnListItem id="columnlistItem1">
+            <ColumnListItem id="columnlistItem1" type="Active" press="onItemPressBooksTable">
                 <ObjectIdentifier id='ObjectIdentifier1' text="{ID}" />
                 <!-- <ObjectIdentifier id='ObjectIdentifier2' text="{title}"/> -->
                 <Text id='column2text' text="{title}" />

@@ -1,0 +1,31 @@
+<mvc:View controllerName="bookshopcatalogv2.controller.BookDetail"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form">
+    <Page id='bookDetail' showNavButton="true" navButtonPress="onNavBack" title="Book Detail Page">
+        <ObjectHeader id='ObjectHeaderBookDetail' title='Hello'></ObjectHeader>
+        <IconTabBar id='IconTabBarBookDetail' class='sapUiResponsiveContentPadding'>
+            <items>
+                <IconTabFilter id='IconTabFilter1-BookDetail' text="{i18n>details}" key="Details">
+                    <form:SimpleForm id='detailSimpleForm' editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+                        <form:content>
+                            <Label id="_IDGenLabel1" text="{i18n>ID}" labelFor="_IDGenText"/>
+                            <Text id="_IDGenText" text="{ID}" />
+                            <Label id="_IDGenLabel2" text="{i18n>title}" labelFor="_IDGenText1"/>
+                            <Text id="_IDGenText1" text="{title}"/>
+                            <Label id="_IDGenLabel3" text="{i18n>stock}" labelFor="_IDGenText2"/>
+                            <Text id="_IDGenText2" text="{stock}" />
+                        </form:content>
+                    </form:SimpleForm>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+        <footer>
+            <Toolbar id='ToolbarBookDetail1'>
+                <ToolbarSpacer id='ToolbarSpacerBookDetail1'/>
+                <Button id='editButtonBookDetail1' text='{i18n>editButtonBookDetail1}' press="onEditBtnPress"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,19 +1,18 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "./BaseController",
     "sap/m/MessageToast",
     "bookshopcatalogv2/model/models",
     "sap/ui/model/Context",
     "sap/m/MessageBox"
-], (Controller, MessageToast, models, Context, MessageBox) => {
+], (BaseController, MessageToast, models, Context, MessageBox) => {
     "use strict";
 
-    return Controller.extend("bookshopcatalogv2.controller.View1", {
+    return BaseController.extend("bookshopcatalogv2.controller.View1", {
         onInit() {
-            this.oResourceModel = this.getOwnerComponent().getModel("i18n").getResourceBundle();
         },
         async onCreate() {
             this.oCreateDialog ??= await this.loadFragment({
-                name: "bookshopcatalogv2.view.create"
+                name: "bookshopcatalogv2.view.fragments.CreateBook"
             })
             this.oCreateDialog.open();
         },
@@ -25,6 +24,9 @@ sap.ui.define([
             })
             this.oEditDialog.setBindingContext(new Context(oModel, sPath))
             this.oEditDialog.open();
+        },
+        onItemPressBooksTable(oEvent) {
+            this.getRouter().navTo("BookDetail")
         },
         //for create dialog
         onDialogCancel() {
@@ -43,7 +45,7 @@ sap.ui.define([
                     success: (oData, oResponse) => {
                         console.log(oData, oResponse)
                         this.oCreateDialog?.close();
-                        MessageToast.show(this.oResourceModel.getText("bookCreatedMsg"))
+                        MessageToast.show(this.getResourceModel().getText("bookCreatedMsg"))
                     },
                     error: (oError) => {
                         console.log(oError);
@@ -63,7 +65,7 @@ sap.ui.define([
 
             this.getView().getModel().remove(sPath, {
                 success: (oData, oResponse) => {
-                    MessageBox.show(this.oResourceModel.getText("bookDeletedMsg"))
+                    MessageBox.show(this.getResourceModel().getText("bookDeletedMsg"))
                     console.log(oData, oResponse);
                 },
                 error: (oError) => {
@@ -84,7 +86,7 @@ sap.ui.define([
             }
             oModel.update(sPath, oPayload, {
                 success: (oData, oResponse) => {
-                    MessageBox.show(this.oResourceModel.getText("bookUpdatedMsg"));
+                    MessageBox.show(this.getResourceModel().getText("bookUpdatedMsg"));
                     this.oEditDialog.close();
                 },
                 error: (oError) => {

@@ -95,12 +95,32 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "BookDetail",
+          "pattern": "BookDetail",
+          "target": "TargetBookDetail"
+        },
+        {
+          "name": "BookDetailEdit",
+          "pattern": "BookDetailEdit",
+          "target": "TargetBookDetailEditPage"
         }
       ],
       "targets": {
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "TargetBookDetail": {
+          "id": "idTargetBookDetail",
+          "name": "BookDetail",
+          "level": 2
+        },
+        "TargetBookDetailEditPage": {
+          "id": "idTargetBookDetailEditPage",
+          "name": "BookDetailEdit",
+          "transition": "show"
         }
       }
     },
