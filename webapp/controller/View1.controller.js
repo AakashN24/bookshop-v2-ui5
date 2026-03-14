@@ -10,11 +10,17 @@ sap.ui.define([
     return BaseController.extend("bookshopcatalogv2.controller.View1", {
         onInit() {
         },
-        async onCreate() {
-            this.oCreateDialog ??= await this.loadFragment({
-                name: "bookshopcatalogv2.view.fragments.CreateBook"
-            })
-            this.oCreateDialog.open();
+        onCreate() {
+            if (!this.oCreateDialog) {
+                this.loadFragment({
+                    name: "bookshopcatalogv2.view.fragments.CreateBook"
+                }).then((oDialog) => {
+                    this.oCreateDialog ??= oDialog;
+                    this.oCreateDialog.open();
+                })
+            } else {
+                this.oCreateDialog.open();
+            }
         },
         async onEditPress(oEvent) {
             const oModel = this.getView().getModel();
