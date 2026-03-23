@@ -4,7 +4,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form">
     <Page id='bookDetail' showNavButton="true" navButtonPress="onNavBack" title="Book Detail Page">
-        <ObjectHeader id='ObjectHeaderBookDetail' title='Hello'></ObjectHeader>
+        <ObjectHeader id='ObjectHeaderBookDetail' title='{title}'></ObjectHeader>
         <IconTabBar id='IconTabBarBookDetail' class='sapUiResponsiveContentPadding'>
             <items>
                 <IconTabFilter id='IconTabFilter1-BookDetail' text="{i18n>details}" key="Details">

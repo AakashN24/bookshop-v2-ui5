@@ -16,12 +16,18 @@ sap.ui.define([
                 path: sPath,
                 parameters: {
                     expand: 'author'
+                },
+                events: {
+                    change: this._onBindingChanged.bind(this),
+                    dataRequested: () => this.getView().setBusy(true),
+                    dataReceived: () => this.getView().setBusy(false)
                 }
-                // events: {
-                //     dataRequested: () => this.getView().setBusy(true),
-                //     dataReceived: () => this.getView().setBusy(false)
-                // }
             })
+        },
+        _onBindingChanged() {
+            if (!this.getView().getBindingContext()) {
+                this.getRouter().getTargets().display('notFound');
+            }
         },
         onEditBtnPress() {
             // this.getRouter().navTo("BookDetailEdit", {}, true /*no History*/);
