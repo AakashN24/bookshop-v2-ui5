@@ -86,7 +86,10 @@
         "viewType": "XML",
         "path": "bookshopcatalogv2.view",
         "async": true,
-        "viewPath": "bookshopcatalogv2.view"
+        "viewPath": "bookshopcatalogv2.view",
+        "bypassed": {
+          "target": "notFound"
+        }
       },
       "routes": [
         {
@@ -121,6 +124,10 @@
           "id": "idTargetBookDetailEditPage",
           "name": "BookDetailEdit",
           "transition": "show"
+        },
+        "notFound": {
+          "id": "idTargetNotFount",
+          "name": "notFount"
         }
       }
     },

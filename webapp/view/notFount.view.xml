@@ -1,0 +1,9 @@
+<mvc:View controllerName="bookshopcatalogv2.controller.notFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <IllustratedMessage id='illustrated-message-notfound' illustrationType='sapIllus-PageNotFound'>
+        <additionalContent>
+            <Button id='goBack-NotFoundPage' text='{i18n>onNavBack}' press='onNavBack'/>
+        </additionalContent>
+    </IllustratedMessage>
+</mvc:View>
