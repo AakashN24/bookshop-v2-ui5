@@ -98,7 +98,7 @@
         },
         {
           "name": "BookDetail",
-          "pattern": "BookDetail",
+          "pattern": "BookDetail/{BookID}",
           "target": "TargetBookDetail"
         },
         {

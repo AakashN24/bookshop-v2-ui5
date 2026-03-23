@@ -22,6 +22,18 @@
                         </form:content>
                     </form:SimpleForm>
                 </IconTabFilter>
+                <IconTabFilter id='IconTabFilter2-BookDetailEditPage' text="{i18n>Author}" key="Details">
+                    <form:SimpleForm id='detailSimpleForm2-BookDetailEditPage' editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+                        <form:content>
+                            <Label id="_IDGenLabel5-BookDetailEditPage" text="{i18n>ID}" labelFor="_IDGenText4"/>
+                            <Text id="_IDGenText4-BookDetailEditPage" text="{author/ID}" />
+                            <Label id="IDGenLabel5-BookDetailEditPage" text="{i18n>name}" labelFor="_IDGenText13"/>
+                            <Text id="_IDGenText13-BookDetailEditPage" text="{author/name}"/>
+                            <Label id="_IDGenLabel4-BookDetailEditPage" text="{i18n>dateOfBirth}" labelFor="_IDGenText3"/>
+                            <Text id="_IDGenText3-BookDetailEditPage" text="{author/dateOfBirth}" />
+                        </form:content>
+                    </form:SimpleForm>
+                </IconTabFilter>
             </items>
         </IconTabBar>
         <footer>

@@ -32,7 +32,7 @@ sap.ui.define([
             this.oEditDialog.open();
         },
         onItemPressBooksTable(oEvent) {
-            this.getRouter().navTo("BookDetail")
+            this.getRouter().navTo("BookDetail", { BookID: oEvent.getSource().getBindingContext().getProperty("ID") })
         },
         //for create dialog
         onDialogCancel() {
